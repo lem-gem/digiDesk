@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Desk App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar">
+    <button id="add-note">Add Sticky Note</button>
+    <button id="clear-canvas">Clear All</button>
+    <button id="clear-stickers">Clear Stickers</button>
+    <input type="file" id="background-input" style="display: none;">
+    <button id="upload-bg">Upload Background</button>
+    <input type="file" id="sticker-upload" accept="image/*" multiple style="display: none;">
+    <button id="add-sticker">Upload Custom Sticker</button>
+  </div>
+  <div class="sticker-library" id="sticker-library">
+    <img src="assets/sticker1.png" class="sticker" draggable="true" alt="Sticker 1">
+    <img src="assets/sticker2.png" class="sticker" draggable="true" alt="Sticker 2">
+    <img src="assets/sticker3.png" class="sticker" draggable="true" alt="Sticker 3">
+  </div>
+  <div id="canvas" class="canvas"></div>
+  <script src="script.js"></script>
+</body>
+</html>
