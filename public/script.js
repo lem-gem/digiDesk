@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // References to DOM elements
+  //References to DOM elements
   const canvas = document.getElementById("canvas");
   const addNoteButton = document.getElementById("add-note");
   const clearCanvasButton = document.getElementById("clear-canvas");
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const stickerLibrary = document.getElementById("sticker-library");
   const studyTimerButton = document.getElementById("study-timer");
 
-  // Utility: Make an element draggable within the canvas
+  //Utility: Make an element draggable within the canvas
   function makeDraggable(el) {
     el.style.position = "absolute";
     el.addEventListener("mousedown", mouseDownHandler);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 1. Add a Sticky Note
+  //Add a Sticky Note
   addNoteButton.addEventListener("click", () => {
     const note = document.createElement("div");
     note.classList.add("sticky-note");
@@ -71,19 +71,19 @@ document.addEventListener("DOMContentLoaded", () => {
     makeDraggable(note);
   });
 
-  // 2. Clear All Items from the Canvas (and reset background)
+  //Clear All Items from the Canvas (and reset background)
   clearCanvasButton.addEventListener("click", () => {
     canvas.innerHTML = "";
     canvas.style.backgroundImage = "";
   });
 
-  // 3. Clear Only Sticker Images from the Canvas
+  //Clear Only Sticker Images from the Canvas
   clearStickersButton.addEventListener("click", () => {
     const stickers = canvas.querySelectorAll("img.sticker");
     stickers.forEach((sticker) => sticker.remove());
   });
 
-  // 4. Upload Background Image for the Canvas
+  //Upload Background Image for the Canvas
   uploadBgButton.addEventListener("click", () => {
     bgInput.click();
   });
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 5. Upload Custom Sticker(s)
+  // Upload Custom Sticker(s)
   addStickerButton.addEventListener("click", () => {
     stickerUploadInput.click();
   });
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 6. Enable Dragging Stickers from the Sticker Library to the Canvas
+  //Enable Dragging Stickers from the Sticker Library to the Canvas
   stickerLibrary.querySelectorAll("img.sticker").forEach((sticker) => {
     sticker.addEventListener("dragstart", (e) => {
       e.dataTransfer.setData("text/plain", sticker.src);
